@@ -24,3 +24,8 @@ jobs:
 
       - name: Lihat isi folder setelah checkout
         run: ls -la
+
+      - name: Sengaja gagal
+        run: |
+          echo "sebentar lagi gagal"
+          exit 1
