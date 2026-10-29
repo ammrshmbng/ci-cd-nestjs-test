@@ -25,7 +25,5 @@ jobs:
       - name: Lihat isi folder setelah checkout
         run: ls -la
 
-      - name: Sengaja gagal
-        run: |
-          echo "sebentar lagi gagal"
-          exit 1
+      - name: Sengaja gagal dan ngawur
+        run: npm jalanin-test-ngawur
