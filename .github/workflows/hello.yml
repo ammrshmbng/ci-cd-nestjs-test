@@ -1,0 +1,26 @@
+name: Hello CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Halo dari runner!"
+
+      - name: Lihat kondisi runner sebelum checkout
+        run: |
+          whoami
+          pwd
+          ls -la
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lihat isi folder setelah checkout
+        run: ls -la
