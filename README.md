@@ -1,37 +1,37 @@
 # Todo API
 
-REST API sederhana untuk mengelola todo. Data disimpan di memori, jadi akan
-hilang saat aplikasi dimulai ulang.
+A simple REST API for managing todos. Data is stored in memory, so it will be
+lost when the application restarts.
 
-## Menjalankan aplikasi
+## Run the application
 
 ```bash
 npm install
 npm run start:dev
 ```
 
-Server berjalan di `http://localhost:3000`. Port bisa diatur lewat environment
-variable `PORT`.
+The server runs at `http://localhost:3000`. You can configure the port using
+the `PORT` environment variable.
 
 ## Endpoint
 
-| Method | Path | Keterangan |
+| Method | Path | Description |
 | --- | --- | --- |
-| `POST` | `/todos` | Membuat todo dengan `title` wajib berupa string tidak kosong |
-| `GET` | `/todos` | Mengambil semua todo |
-| `GET` | `/todos/:id` | Mengambil satu todo berdasarkan ID |
-| `PATCH` | `/todos/:id` | Mengubah `title` dan/atau `done` |
-| `DELETE` | `/todos/:id` | Menghapus todo |
+| `POST` | `/todos` | Create a todo with a required, non-empty string `title` |
+| `GET` | `/todos` | Get all todos |
+| `GET` | `/todos/:id` | Get a todo by ID |
+| `PATCH` | `/todos/:id` | Update the `title` and/or `done` status |
+| `DELETE` | `/todos/:id` | Delete a todo |
 
-Contoh membuat todo:
+Example: create a todo
 
 ```bash
 curl -X POST http://localhost:3000/todos \
   -H "Content-Type: application/json" \
-  -d '{"title":"belajar CI/CD"}'
+  -d '{"title":"learn CI/CD"}'
 ```
 
-## Pemeriksaan lokal
+## Run the local checks
 
 ```bash
 npm run lint
